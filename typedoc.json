@@ -1,7 +1,12 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["./src/array.ts", "./src/type-guard.ts", "./src/type-of.ts"],
-  "plugin": ["@8hobbies/typedoc-plugin-404"],
+  "entryPoints": [
+    "./src/array.ts",
+    "./src/error.ts",
+    "./src/type-guard.ts",
+    "./src/type-of.ts"
+  ],
+  "plugin": ["@8hobbies/typedoc-plugin-404", "typedoc-plugin-mdn-links"],
   "blockTags": ["@assert"],
   "sitemapBaseUrl": "https://utils.8hobbies.com",
   "externalSymbolLinkMappings": {

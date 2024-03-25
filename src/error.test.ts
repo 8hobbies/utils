@@ -15,9 +15,21 @@
  * limitations under the License.
  */
 
-test("index includes other modules", async () => {
-  const imported = await import("./index.js");
-  expect(imported).toHaveProperty("typeOfNames");
-  expect(imported).toHaveProperty("isArrayOf");
-  expect(imported).toHaveProperty("convertErrorToString");
+import { convertErrorToString } from "./error.js";
+
+describe("convertErrorToString", () => {
+  test("String input, returns the input", () => {
+    const input = "abc" as const;
+    expect(convertErrorToString(input)).toBe(input);
+  });
+
+  test("Object with message input, returns the message", () => {
+    const input = { message: "error message" };
+    expect(convertErrorToString(input)).toBe(input.message);
+  });
+
+  test("Object with no message input, returns stringified input", () => {
+    const input = { noMessage: "no error message" };
+    expect(convertErrorToString(input)).toBe(JSON.stringify(input));
+  });
 });

@@ -1,6 +1,6 @@
 {
   "name": "@8hobbies/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generally useful TypeScript and JavaScript utilities.",
   "main": "dist/index.js",
   "type": "module",

@@ -30,7 +30,7 @@ import type { TypeGuardOf } from "./type-guard.d.ts";
 export function isArrayOf<TypeOfName extends TypeOfNames>(
   arg: unknown,
   typeName: TypeOfName,
-): arg is FromTypeOfName<TypeOfName>;
+): arg is Array<FromTypeOfName<TypeOfName>>;
 
 /** Type guard for an array of a given type `T` determined by a given type guard.
  *

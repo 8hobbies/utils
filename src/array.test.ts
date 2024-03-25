@@ -15,15 +15,24 @@
  * limitations under the License.
  */
 
+import { expectType } from "ts-expect";
 import { isArrayOf } from "./array.js";
 
 describe("isArrayOf with string type names", () => {
   test("Matched types", () => {
-    const a = ["a", "b"] as const;
-    expect(isArrayOf(a, "string")).toBeTruthy();
+    const a: unknown = ["a", "b"];
+    const aResult = isArrayOf(a, "string");
+    expect(aResult).toBeTruthy();
+    if (aResult) {
+      expectType<string[]>(a);
+    }
 
-    const b = [1, 2] as const;
-    expect(isArrayOf(b, "number")).toBeTruthy();
+    const b: unknown = [1, 2];
+    const bResult = isArrayOf(b, "number");
+    expect(bResult).toBeTruthy();
+    if (bResult) {
+      expectType<number[]>(b);
+    }
   });
 
   test("Mismatched types", () => {
@@ -50,7 +59,11 @@ describe("isArrayOf with specified type guards", () => {
 
   test("Matched types", () => {
     const a = [{ testKey: "testVal" }, { testKey: "testVal2" }] as const;
-    expect(isArrayOf(a, testTypeGuard)).toBeTruthy();
+    const aResult = isArrayOf(a, testTypeGuard);
+    expect(aResult).toBeTruthy();
+    if (aResult) {
+      expectType<TestType[]>(a);
+    }
   });
 
   test("Mismatched types", () => {

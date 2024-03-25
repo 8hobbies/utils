@@ -17,12 +17,10 @@
 
 import { expectType, TypeEqual } from "ts-expect";
 
-import { FromTypeOfName, typeOfNames } from "./type-of.js";
+import type { TypeGuardOf } from "./type-guard.ts";
 
-test("typeOfNames has the right size", () => {
-  expect(typeOfNames).toHaveLength(8);
-});
-
-test("FromTypeOfName type check", () => {
-  expectType<TypeEqual<FromTypeOfName<"boolean">, boolean>>(true);
+test("TypeGuardOf type check", () => {
+  expectType<TypeGuardOf<number>>(
+    (arg: unknown): arg is number => typeof arg === "number",
+  );
 });

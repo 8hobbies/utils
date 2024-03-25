@@ -23,16 +23,18 @@ describe("isArrayOf with string type names", () => {
     const a: unknown = ["a", "b"];
     const aResult = isArrayOf(a, "string");
     expect(aResult).toBeTruthy();
-    if (aResult) {
-      expectType<string[]>(a);
+    if (!aResult) {
+      throw new Error("Unexpected falsy result.");
     }
+    expectType<string[]>(a);
 
     const b: unknown = [1, 2];
     const bResult = isArrayOf(b, "number");
     expect(bResult).toBeTruthy();
-    if (bResult) {
-      expectType<number[]>(b);
+    if (!bResult) {
+      throw new Error("Unexpected falsy result.");
     }
+    expectType<number[]>(b);
   });
 
   test("Mismatched types", () => {
@@ -61,9 +63,10 @@ describe("isArrayOf with specified type guards", () => {
     const a = [{ testKey: "testVal" }, { testKey: "testVal2" }] as const;
     const aResult = isArrayOf(a, testTypeGuard);
     expect(aResult).toBeTruthy();
-    if (aResult) {
-      expectType<TestType[]>(a);
+    if (!aResult) {
+      throw new Error("Unexpected falsy result.");
     }
+    expectType<TestType[]>(a);
   });
 
   test("Mismatched types", () => {

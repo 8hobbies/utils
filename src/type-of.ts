@@ -45,7 +45,6 @@ export const typeOfNames = [
   "number",
   "object",
   "string",
-  "string",
   "symbol",
   "undefined",
 ] as const;

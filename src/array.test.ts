@@ -15,3 +15,53 @@
  * limitations under the License.
  */
 
+import { isArrayOf } from "./array.js";
+
+describe("isArrayOf with string type names", () => {
+  test("Matched types", () => {
+    const a = ["a", "b"] as const;
+    expect(isArrayOf(a, "string")).toBeTruthy();
+
+    const b = [1, 2] as const;
+    expect(isArrayOf(b, "number")).toBeTruthy();
+  });
+
+  test("Mismatched types", () => {
+    const a = ["a", "b"] as const;
+    expect(isArrayOf(a, "number")).toBeFalsy();
+
+    const b = [1, "b"] as const;
+    expect(isArrayOf(b, "string")).toBeFalsy();
+  });
+
+  test("Empty array", () => {
+    const a = [] as const;
+    expect(isArrayOf(a, "number")).toBeTruthy();
+  });
+});
+
+describe("isArrayOf with specified type guards", () => {
+  interface TestType {
+    testKey: unknown;
+  }
+  function testTypeGuard(arg: unknown): arg is TestType {
+    return typeof arg === "object" && arg !== null && "testKey" in arg;
+  }
+
+  test("Matched types", () => {
+    const a = [{ testKey: "testVal" }, { testKey: "testVal2" }] as const;
+    expect(isArrayOf(a, testTypeGuard)).toBeTruthy();
+  });
+
+  test("Mismatched types", () => {
+    const a = [{ testKey1: "testVal" }, { testKey: "testVal2" }] as const;
+    expect(isArrayOf(a, testTypeGuard)).toBeFalsy();
+    const b = [{ testKey1: "testVal" }, { testKey1: "testVal2" }] as const;
+    expect(isArrayOf(b, testTypeGuard)).toBeFalsy();
+  });
+
+  test("Empty array", () => {
+    const a = [] as const;
+    expect(isArrayOf(a, testTypeGuard)).toBeTruthy();
+  });
+});

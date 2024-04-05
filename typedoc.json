@@ -3,6 +3,7 @@
   "entryPoints": [
     "./src/array.ts",
     "./src/error.ts",
+    "./src/is-one-of.ts",
     "./src/type-guard.ts",
     "./src/type-of.ts"
   ],

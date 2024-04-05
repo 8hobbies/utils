@@ -17,10 +17,12 @@
 
 export * from "./array.js";
 export * from "./error.js";
+export * from "./is-one-of.js";
 export * from "./type-guard.js";
 export * from "./type-of.js";
 
 export type * from "./array.d.ts";
 export type * from "./error.d.ts";
+export type * from "./is-one-of.d.ts";
 export type * from "./type-guard.d.ts";
 export type * from "./type-of.d.ts";

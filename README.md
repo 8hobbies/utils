@@ -4,6 +4,8 @@
 [![pipeline status](https://gitlab.com/8hobbies/utils/badges/master/pipeline.svg)](https://gitlab.com/8hobbies/utils/-/commits/master)
 [![coverage report](https://gitlab.com/8hobbies/utils/badges/master/coverage.svg)](https://gitlab.com/8hobbies/utils/-/commits/master)
 
+[GitLab](https://gitlab.com/8hobbies/utils) | [GitHub](https://github.com/8hobbies/utils)
+
 A library that consists of generally useful TypeScript and JavaScript utilities. Please refer to the
 [api documentation][] for references.
 

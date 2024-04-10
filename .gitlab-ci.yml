@@ -1,4 +1,4 @@
-# Copyright 2023-2024 8 Hobbies, LLC <hong@8hobbies.com>
+# Copyright 2024 8 Hobbies, LLC <hong@8hobbies.com>
 #
 # Licensed under the Apache License, Version 2.0(the "License");
 # you may not use this file except in compliance with the License.
@@ -62,13 +62,22 @@ runtime-linux:
       - IMAGE:
           - "node:18"
           - "node:20"
+          - "node:21"
 
 runtime-windows:
   extends: ".runtime"
   tags:
     - saas-windows-medium-amd64
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 runtime-macos:
   extends: ".runtime"
   tags:
     - saas-macos-medium-m1
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"

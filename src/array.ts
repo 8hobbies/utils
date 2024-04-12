@@ -25,7 +25,10 @@ import type { TypeGuardOf } from "./type-guard.d.ts";
 
 /** Type guard for an array of a given type name.
  *
- * @param arg - Expression that is determined to be an array or not.
+ * @typeParam T - The type of the element of the array.
+ * @param arg - Expression that is to be determined whether it is an array or not.
+ * @param typeName - Name of the type of elements.
+ * @returns Whether `arg` is an array of elements of type specified by `typeName`.
  */
 export function isArrayOf<TypeOfName extends TypeOfNames>(
   arg: unknown,
@@ -35,7 +38,7 @@ export function isArrayOf<TypeOfName extends TypeOfNames>(
 /** Type guard for an array of a given type `T` determined by a given type guard.
  *
  * @typeParam T - The type of the element of the array.
- * @param arg - Expression that is determined to be an array of `T` or not.
+ * @param arg - Expression that is to be determined whether it is an array or not.
  * @param pred - The type guard for element T.
  * @returns Whether `arg` is an array of elements of type `T`.
  */

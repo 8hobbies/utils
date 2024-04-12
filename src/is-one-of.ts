@@ -14,7 +14,7 @@
  *
  * This makes sense, because when `fruits` is dynamically constructed by the logic of the program,
  * an unmatched element type is not intended and likely an error. However, the third line in the
- * above code snippet would fail to compile if array contains literal types:
+ * above code snippet would fail to compile if `fruits` contains literal types:
  *
  * ```ts
  * const fruits = ["apple", "orange", "grape"] as const;  // or new Set(["apple", "orange", "grape"] as const);

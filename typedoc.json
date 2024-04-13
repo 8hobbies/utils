@@ -7,12 +7,17 @@
     "./src/type-guard.ts",
     "./src/type-of.ts"
   ],
-  "plugin": ["@8hobbies/typedoc-plugin-404", "typedoc-plugin-mdn-links"],
+  "plugin": [
+    "@8hobbies/typedoc-plugin-404",
+    "@8hobbies/typedoc-plugin-plausible",
+    "typedoc-plugin-mdn-links"
+  ],
   "blockTags": ["@assert"],
-  "sitemapBaseUrl": "https://utils.8hobbies.com",
+  "sitemapBaseUrl": "https://utils.8hob.io",
   "externalSymbolLinkMappings": {
     "global": {
       "typeof": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof"
     }
-  }
+  },
+  "plausibleSiteDomain": "oss.8hob.io"
 }

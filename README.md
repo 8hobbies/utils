@@ -40,5 +40,5 @@ limitations under the License.
 
 [issue tracker]: https://gitlab.com/8hobbies/utils/issues
 [merge request]: https://gitlab.com/8hobbies/utils/-/merge_requests
-[api documentation]: https://utils.8hobbies.com
+[api documentation]: https://utils.8hob.io
 [source code]: https://gitlab.com/8hobbies/utils

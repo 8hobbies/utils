@@ -33,10 +33,11 @@
   "bugs": {
     "url": "https://gitlab.com/8hobbies/utils/issues"
   },
-  "homepage": "https://utils.8hobbies.com",
+  "homepage": "https://utils.8hob.io",
   "devDependencies": {
     "@8hobbies/eslint-conf-baseline": "^2.1.0",
     "@8hobbies/typedoc-plugin-404": "^2.0.2",
+    "@8hobbies/typedoc-plugin-plausible": "^1.0.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.6",
     "@vitest/coverage-v8": "^1.4.0",

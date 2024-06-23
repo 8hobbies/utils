@@ -12,7 +12,6 @@
     "@8hobbies/typedoc-plugin-plausible",
     "typedoc-plugin-mdn-links"
   ],
-  "blockTags": ["@assert"],
   "hostedBaseUrl": "https://utils.8hob.io",
   "useHostedBaseUrlForAbsoluteLinks": true,
   "externalSymbolLinkMappings": {

@@ -39,16 +39,16 @@
     "@8hobbies/typedoc-plugin-404": "^3.0.0",
     "@8hobbies/typedoc-plugin-plausible": "^2.0.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.10",
     "@vitest/coverage-v8": "^1.6.0",
-    "globals": "^15.7.0",
+    "globals": "^15.8.0",
     "prettier": "^3.3.2",
     "rimraf": "^5.0.7",
     "ts-expect": "^1.3.0",
     "ts-node": "^10.9.2",
     "typedoc": "^0.26.3",
     "typedoc-plugin-mdn-links": "^3.2.2",
-    "typescript": "^5.5.2",
+    "typescript": "^5.5.3",
     "vitest": "^1.6.0"
   }
 }

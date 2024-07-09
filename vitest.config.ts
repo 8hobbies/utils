@@ -23,7 +23,13 @@ export default defineConfig({
     globals: true,
     coverage: {
       provider: "v8",
-      exclude: ["dist/**", "docs/**"],
+      exclude: [
+        "dist/**",
+        "docs/**",
+        "src/**.test.ts",
+        "eslint.config.mjs",
+        "vitest.config.ts",
+      ],
       reporter: ["cobertura", "text"],
       thresholds: {
         lines: 100,

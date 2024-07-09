@@ -15,6 +15,7 @@
  * limitations under the License.
  */
 
+import { expectType } from "ts-expect";
 import { isOneOf } from "./is-one-of.js";
 
 describe("isOneOf applied to a collection of literals", () => {
@@ -28,6 +29,22 @@ describe("isOneOf applied to a collection of literals", () => {
 
     test(`${collection.toString()} not including with non-literal element type returns false`, () => {
       expect(isOneOf("c", collection)).toBe(false);
+    });
+
+    test(`${collection.toString()} including with non-literal element type asserts type`, () => {
+      const input: string = "a";
+      if (!isOneOf(input, collection)) {
+        throw new Error("Should not reach here.");
+      }
+      expectType<"a" | "b">(input);
+    });
+
+    test(`${collection.toString()} not including with non-literal element type asserts type`, () => {
+      const input: string = "c";
+      if (isOneOf(input, collection)) {
+        throw new Error("Should not reach here.");
+      }
+      expectType<string>(input);
     });
 
     test(`${collection.toString()} including with literal element type leads to type error`, () => {

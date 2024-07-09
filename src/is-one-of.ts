@@ -39,6 +39,14 @@
  *
  * For the first scenario, you should continue using {@link !Array.includes} and {@link !Set.has}.
  *
+ * This function can also be used as a type guard. Continuing the previous example:
+ *
+ * ```ts
+ * if (isOneOf(fireball, fruits)) {
+ *   // In this block, fireball is of the type "apple" | "orange" | "grape"
+ * }
+ * ```
+ *
  * @module is-one-of
  */
 
@@ -70,10 +78,10 @@
  * @returns Whether whether `array` includes `element`.
  * @see {@link is-one-of}
  */
-export function isOneOf<T>(
+export function isOneOf<T, ArrayElement extends T>(
   element: T,
-  array: Readonly<Array<NoInfer<T>>>,
-): boolean;
+  array: Readonly<Array<ArrayElement>>,
+): element is ArrayElement;
 
 /** Returns whether `set` includes `element`.
  *
@@ -86,7 +94,10 @@ export function isOneOf<T>(
  * @returns Whether whether `set` includes `element`.
  * @see {@link is-one-of}
  */
-export function isOneOf<T>(element: T, set: Readonly<Set<NoInfer<T>>>): boolean;
+export function isOneOf<T, SetElement extends T>(
+  element: T,
+  set: Readonly<Set<SetElement>>,
+): element is SetElement;
 
 /** A catch-all overload of the other two overloads. Check out the other two overloads for details.
  *
@@ -104,16 +115,16 @@ export function isOneOf<T>(element: T, set: Readonly<Set<NoInfer<T>>>): boolean;
  * }
  * ```
  */
-export function isOneOf<T>(
+export function isOneOf<T, Element extends T>(
   element: T,
-  collection: Readonly<Array<NoInfer<T>>> | Readonly<Set<NoInfer<T>>>,
-): boolean;
+  collection: Readonly<Array<Element>> | Readonly<Set<Element>>,
+): element is Element;
 
 /** @hidden */
-export function isOneOf<T>(
+export function isOneOf<T, Element extends T>(
   element: T,
-  collection: Readonly<Array<NoInfer<T>>> | Readonly<Set<NoInfer<T>>>,
-): boolean {
+  collection: Readonly<Array<Element>> | Readonly<Set<Element>>,
+): element is Element {
   if (Array.isArray(collection)) {
     return collection.includes(element);
   } else if (collection instanceof Set) {

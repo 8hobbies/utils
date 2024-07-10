@@ -44,7 +44,6 @@ export function isArrayOf<TypeOfName extends TypeOfNames>(
  */
 export function isArrayOf<T>(arg: unknown, pred: TypeGuardOf<T>): arg is T[];
 
-/** @hidden */
 export function isArrayOf<T>(
   arg: unknown,
   predOrTypeName: TypeGuardOf<T> | TypeOfNames,

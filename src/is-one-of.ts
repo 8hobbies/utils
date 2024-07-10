@@ -120,7 +120,6 @@ export function isOneOf<T, Element extends T>(
   collection: Readonly<Array<Element>> | Readonly<Set<Element>>,
 ): element is Element;
 
-/** @hidden */
 export function isOneOf<T, Element extends T>(
   element: T,
   collection: Readonly<Array<Element>> | Readonly<Set<Element>>,

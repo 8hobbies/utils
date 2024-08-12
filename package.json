@@ -35,7 +35,7 @@
   },
   "homepage": "https://utils.8hob.io",
   "devDependencies": {
-    "@8hobbies/eslint-conf-baseline": "^2.1.1",
+    "@8hobbies/eslint-conf-baseline": "^4.0.1",
     "@8hobbies/typedoc-plugin-404": "^3.0.0",
     "@8hobbies/typedoc-plugin-plausible": "^2.0.0",
     "@types/jest": "^29.5.12",

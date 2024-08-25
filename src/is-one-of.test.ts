@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-import { expectType } from "ts-expect";
 import { isOneOf } from "./is-one-of.js";
 
 describe("isOneOf applied to a collection of literals", () => {

@@ -1,5 +1,8 @@
 /** Utilities for determining whether a value is in a given {@link !Array}/{@link !Set}.
  *
+ * For a more detailed explanation, check out
+ * https://8hob.io/posts/elegant-safe-solution-for-typing-array-includes/.
+ *
  * JavaScript {@link !Array.includes} and {@link !Set.has} determine whether a value is in a given
  * {@link !Array}/{@link !Set}. They are typed such that the parameter must be assignable to the
  * element type of the {@link !Array}/{@link !Set}:
@@ -78,10 +81,7 @@
  * @returns Whether whether `array` includes `element`.
  * @see {@link is-one-of}
  */
-export function isOneOf<T, ArrayElement extends T>(
-  element: T,
-  array: Readonly<Array<ArrayElement>>,
-): element is ArrayElement;
+export function isOneOf<T>(element: T, array: readonly T[]): boolean;
 
 /** Returns whether `set` includes `element`.
  *
@@ -94,10 +94,7 @@ export function isOneOf<T, ArrayElement extends T>(
  * @returns Whether whether `set` includes `element`.
  * @see {@link is-one-of}
  */
-export function isOneOf<T, SetElement extends T>(
-  element: T,
-  set: Readonly<Set<SetElement>>,
-): element is SetElement;
+export function isOneOf<T>(element: T, set: Readonly<Set<T>>): boolean;
 
 /** A catch-all overload of the other two overloads. Check out the other two overloads for details.
  *
@@ -115,15 +112,15 @@ export function isOneOf<T, SetElement extends T>(
  * }
  * ```
  */
-export function isOneOf<T, Element extends T>(
+export function isOneOf<T>(
   element: T,
-  collection: Readonly<Array<Element>> | Readonly<Set<Element>>,
-): element is Element;
+  collection: Readonly<Array<T>> | Readonly<Set<T>>,
+): boolean;
 
-export function isOneOf<T, Element extends T>(
+export function isOneOf<T>(
   element: T,
-  collection: Readonly<Array<Element>> | Readonly<Set<Element>>,
-): element is Element {
+  collection: Readonly<Array<T>> | Readonly<Set<T>>,
+): boolean {
   if (Array.isArray(collection)) {
     return collection.includes(element);
   } else if (collection instanceof Set) {

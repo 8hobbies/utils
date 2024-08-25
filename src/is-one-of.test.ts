@@ -31,29 +31,11 @@ describe("isOneOf applied to a collection of literals", () => {
       expect(isOneOf("c", collection)).toBe(false);
     });
 
-    test(`${collection.toString()} including with non-literal element type asserts type`, () => {
-      const input: string = "a";
-      if (!isOneOf(input, collection)) {
-        throw new Error("Should not reach here.");
-      }
-      expectType<"a" | "b">(input);
-    });
-
-    test(`${collection.toString()} not including with non-literal element type asserts type`, () => {
-      const input: string = "c";
-      if (isOneOf(input, collection)) {
-        throw new Error("Should not reach here.");
-      }
-      expectType<string>(input);
-    });
-
-    test(`${collection.toString()} including with literal element type leads to type error`, () => {
-      // @ts-expect-error
+    test(`${collection.toString()} including with literal element type leads to no type error`, () => {
       expect(isOneOf("a" as const, collection)).toBe(true);
     });
 
-    test(`${collection.toString()} not including literal element type leads to type error`, () => {
-      // @ts-expect-error
+    test(`${collection.toString()} not including literal element type leads to no type error`, () => {
       expect(isOneOf("c" as const, collection)).toBe(false);
     });
   }

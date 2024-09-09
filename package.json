@@ -39,7 +39,7 @@
     "@8hobbies/typedoc-plugin-404": "^3.0.0",
     "@8hobbies/typedoc-plugin-plausible": "^2.0.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^22.5.2",
+    "@types/node": "^22.5.4",
     "@vitest/coverage-v8": "^2.0.5",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",

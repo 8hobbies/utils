@@ -1,6 +1,11 @@
+/**
+ * Utilities for strings.
+ * @module string
+ */
+
 /** @license Apache-2.0
  *
- * Copyright 2024 8 Hobbies, LLC <hong @8hobbies.com>
+ * Copyright 2024 8 Hobbies, LLC <hong@8hobbies.com>
  *
  * Licensed under the Apache License, Version 2.0(the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +20,14 @@
  * limitations under the License.
  */
 
-export * from "./array.js";
-export * from "./error.js";
-export * from "./is-one-of.js";
-export * from "./string.js";
-export * from "./type-guard.js";
-export * from "./type-of.js";
-
-export type * from "./array.d.ts";
-export type * from "./error.d.ts";
-export type * from "./is-one-of.d.ts";
-export type * from "./string.d.ts";
-export type * from "./type-guard.d.ts";
-export type * from "./type-of.d.ts";
+/** Indicates whether a give string is blank.
+ *
+ * A string is blank if it is empty or contains only blank characters:
+ * https://developer.mozilla.org/en-US/docs/Glossary/Whitespace
+ *
+ * @param s - A string to determine whether it's blank.
+ * @returns whether `s` is blank.
+ */
+export function isBlank(s: string): boolean {
+  return s.trim().length === 0;
+}

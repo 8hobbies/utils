@@ -1,6 +1,6 @@
 /** @license Apache-2.0
  *
- * Copyright 2024 8 Hobbies, LLC <hong @8hobbies.com>
+ * Copyright 2024 8 Hobbies, LLC <hong@8hobbies.com>
  *
  * Licensed under the Apache License, Version 2.0(the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,19 @@
  * limitations under the License.
  */
 
-export * from "./array.js";
-export * from "./error.js";
-export * from "./is-one-of.js";
-export * from "./string.js";
-export * from "./type-guard.js";
-export * from "./type-of.js";
+import { isBlank } from "./string.js";
 
-export type * from "./array.d.ts";
-export type * from "./error.d.ts";
-export type * from "./is-one-of.d.ts";
-export type * from "./string.d.ts";
-export type * from "./type-guard.d.ts";
-export type * from "./type-of.d.ts";
+describe("isBlank", () => {
+  test("Empty string", () => {
+    expect(isBlank("")).toBeTruthy();
+  });
+  test("String with some whitespace chracters", () => {
+    expect(isBlank("  \t\f")).toBeTruthy();
+  });
+  test("Non-blank string containing whitespace characters", () => {
+    expect(isBlank(" abc ")).toBeFalsy();
+  });
+  test("Non-blank string not containing whitespace characters", () => {
+    expect(isBlank("abc")).toBeFalsy();
+  });
+});

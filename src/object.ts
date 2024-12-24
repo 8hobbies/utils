@@ -1,6 +1,11 @@
+/** Utilities for handling objects.
+ *
+ * @module object
+ */
+
 /** @license Apache-2.0
  *
- * Copyright 2024 8 Hobbies, LLC <hong @8hobbies.com>
+ * Copyright 2024 8 Hobbies, LLC <hong@8hobbies.com>
  *
  * Licensed under the Apache License, Version 2.0(the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +20,17 @@
  * limitations under the License.
  */
 
-export * from "./array.js";
-export * from "./error.js";
-export * from "./is-one-of.js";
-export * from "./object.js";
-export * from "./string.js";
-export * from "./type-guard.js";
-export * from "./type-of.js";
-
-export type * from "./array.d.ts";
-export type * from "./error.d.ts";
-export type * from "./is-one-of.d.ts";
-export type * from "./object.d.ts";
-export type * from "./string.d.ts";
-export type * from "./type-guard.d.ts";
-export type * from "./type-of.d.ts";
+/** A type guard that determines if the given key is a member the given object.
+ *
+ * @param key - the key.
+ * @param obj - the object.
+ * @typeParam T - the type of the object.
+ * @returns true if `key` is a member of `object`, false otherwise. The type of
+ * `key` is determined to be `keyof T` if the return value is true.
+ */
+export function isInObject<T extends object>(
+  key: PropertyKey,
+  obj: T,
+): key is keyof T {
+  return key in obj;
+}

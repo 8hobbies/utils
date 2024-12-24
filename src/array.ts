@@ -25,7 +25,7 @@ import type { TypeGuardOf } from "./type-guard.d.ts";
 
 /** Type guard for an array of a given type name.
  *
- * @typeParam T - The type of the element of the array.
+ * @typeParam TypeOfName - The type of the element of the array.
  * @param arg - Expression that is to be determined whether it is an array or not.
  * @param typeName - Name of the type of elements.
  * @returns Whether `arg` is an array of elements of type specified by `typeName`.

@@ -32,10 +32,11 @@ test("Returns false if key is not in object", () => {
 
 test("Type guard determines key type to keyof object", () => {
   const obj = { a: 1, b: 2 } as const;
-  const key = "a" as const;
+  const key: string = "a";
   if (isInObject(key, obj)) {
     expectType<"a" | "b">(key);
   } else {
+    // @ts-expect-error
     expectType<never>(key);
   }
 });

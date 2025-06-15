@@ -39,8 +39,8 @@
     "@8hobbies/typedoc-plugin-404": "3.2.1",
     "@8hobbies/typedoc-plugin-plausible": "2.2.0",
     "@types/jest": "29.5.14",
-    "@types/node": "22.15.29",
-    "@vitest/coverage-v8": "3.1.4",
+    "@types/node": "22.15.30",
+    "@vitest/coverage-v8": "3.2.2",
     "globals": "16.2.0",
     "prettier": "3.5.3",
     "rimraf": "6.0.1",
@@ -49,6 +49,6 @@
     "typedoc": "0.27.9",
     "typedoc-plugin-mdn-links": "5.0.2",
     "typescript": "5.8.3",
-    "vitest": "3.1.4"
+    "vitest": "3.2.2"
   }
 }

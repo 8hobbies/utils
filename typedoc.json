@@ -8,11 +8,7 @@
     "./src/type-guard.ts",
     "./src/type-of.ts"
   ],
-  "plugin": [
-    "@8hobbies/typedoc-plugin-404",
-    "@8hobbies/typedoc-plugin-plausible",
-    "typedoc-plugin-mdn-links"
-  ],
+  "plugin": ["@8hobbies/typedoc-plugin-plausible", "typedoc-plugin-mdn-links"],
   "hostedBaseUrl": "https://utils.8hob.io",
   "useHostedBaseUrlForAbsoluteLinks": true,
   "externalSymbolLinkMappings": {
@@ -20,6 +16,6 @@
       "typeof": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof"
     }
   },
-  "customFooterHtml": "&copy; 2024 <a href=\"https://8hob.io\">8 Hobbies, LLC</a>",
+  "customFooterHtml": "&copy; 2024-2025 <a href=\"https://8hob.io\">8 Hobbies, LLC</a>",
   "plausibleSiteDomain": "oss.8hob.io"
 }
